@@ -1,13 +1,24 @@
 server:
-  port: 8080
+  port: 9080
 spring:
   dubbo:
     application:
       name: dubbo-provoder
     registry:
-      address: zookeeper://10.128.134.33
+      address: zookeeper://10.128.123.45
       port: 2181
     protocol:
       name: dubbo
       port: 20890
+      heartbeat: 10000000
     scan: com.dubbo.dubbotm.service.impl
+    dubbo:
+      application:
+        logger: log4j
+logging:
+  level:
+    com.alibaba: info
+    root: info
+  config: classpath:recognition-logback.xml
+
+

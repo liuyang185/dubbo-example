@@ -1,13 +1,28 @@
 server:
-  port: 8081
+  port: 9081
 spring:
   dubbo:
     application:
       name: dubbo-consumer
     registry:
-      address: zookeeper://10.128.134.33
+      address: zookeeper://10.128.123.45
       port: 2181
+#    logger: log4j
 #    protocol:
 #      name: dubbo
-#      port: 20890
+#      port: 20890 dubbo.application.logge
     scan: com.dubbo.dubbotm.controller
+  cloud:
+    consul:
+      host: 10.128.123.158
+      port: 6500
+      discovery:
+        service-name: testconsul
+        instance-id: testconsul-1
+        health-check-path: /actuator/health
+        hostname: 10.136.48.44
+#logging:
+#  level:
+#    com.alibaba: debug
+
+

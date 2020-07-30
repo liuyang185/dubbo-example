@@ -18,7 +18,7 @@ public class ConsumerController {
     @Reference(version = "1.0")
     private TestService testService;
     @GetMapping(value = "testService")
-    public Object testService(){
+    public String testService(){
         return testService.testDubbo();
     }
 }
